@@ -1,0 +1,100 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+10
+(
+    inlet
+    {
+        type            patch;
+        nFaces          41;
+        startFace       18038;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          41;
+        startFace       18079;
+    }
+    front
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          9178;
+        startFace       18120;
+    }
+    back
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          9178;
+        startFace       27298;
+    }
+    bottom
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          0;
+        startFace       36476;
+    }
+    top
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          125;
+        startFace       36476;
+    }
+    VAWT
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          118;
+        startFace       36601;
+    }
+    AMI1
+    {
+        type            cyclicAMI;
+        inGroups        1(cyclicAMI);
+        nFaces          128;
+        startFace       36719;
+        matchTolerance  0.0001;
+        transform       noOrdering;
+        neighbourPatch  AMI2;
+    }
+    AMI2
+    {
+        type            cyclicAMI;
+        inGroups        1(cyclicAMI);
+        nFaces          130;
+        startFace       36847;
+        matchTolerance  0.0001;
+        transform       noOrdering;
+        neighbourPatch  AMI1;
+    }
+    procBoundary1to0
+    {
+        type            processor;
+        inGroups        1(processor);
+        nFaces          190;
+        startFace       36977;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        1;
+        neighbProcNo    0;
+    }
+)
+
+// ************************************************************************* //
