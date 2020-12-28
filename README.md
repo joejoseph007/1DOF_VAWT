@@ -1,2 +1,2 @@
-# 2018_07_07
-1 DOF simulation of VAWT in OpenFoam
+# 1 DOF simulation case files for VAWT on OpenFOAM
+Compiled on: 2018_07_07
