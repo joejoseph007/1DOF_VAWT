@@ -1,2 +1,2 @@
 # 2018_07_07
-6 DOF simulation of VAWT in OpenFoam
+1 DOF simulation of VAWT in OpenFoam
